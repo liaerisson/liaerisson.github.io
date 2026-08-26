@@ -271,7 +271,7 @@ a:hover {
 .about_description {
     max-width: 760px;
 
-    padding-bottom: 80px;
+    padding-bottom: 40px;
 
     color: var(--muted);
 
@@ -651,6 +651,84 @@ a:hover {
     transform: translateY(-1px);
 }
 
+/* =========================
+   CONTACT / HOMEPAGE CTA
+   ========================= */
+
+.contact {
+    margin-top: 10px;
+    margin-bottom: 70px;
+
+    padding: 32px 34px;
+
+    background-color: var(--accent-soft);
+
+    border-radius: var(--radius-large);
+}
+
+.contact h2 {
+    margin: 0 0 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+
+    color: var(--text);
+}
+
+.contact p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--muted);
+}
+
+.contact_links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.contact_links a {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+
+    color: var(--accent);
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.contact_links a:hover {
+    background-color: var(--surface);
+    color: var(--text);
+
+    transform: translateY(-1px);
+}
+
+.contact_links .contact_primary {
+    background-color: var(--accent);
+    color: white;
+}
+
+.contact_links .contact_primary:hover {
+    background-color: var(--text);
+    color: white;
+}
+
 
 /* =========================
    RESPONSIVE
@@ -709,5 +787,14 @@ a:hover {
     .experience_description,
     .extracurricular_description {
         padding: 18px;
+    }
+
+    .contact {
+        padding: 24px 20px;
+        margin-bottom: 45px;
+    }
+
+    .contact_links {
+        gap: 9px;
     }
 }
