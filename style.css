@@ -117,9 +117,6 @@ ol {
     padding-top: 20px;
 }
 
-.project summary {
-}
-
 .project summary::-webkit-details-marker {
     display: none;
 }

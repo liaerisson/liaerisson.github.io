@@ -9,19 +9,28 @@
 
 <body>
     <h3>Projects</h3>
-    <p>I have always loved making projects outside of my usual classes. This summer, after realizing that many of my projects were incomplete or designed for non-public applications, I developed some new projects this summer!</p>
+    <p>I have always loved making projects outside of my usual classes. This summer, after realizing that many of my
+        projects were incomplete or designed for non-public applications, I developed some new projects this summer!</p>
 
     <details class="project">
         <summary>
             <h2>Market Simulator</h2>
             <span>C++ · CMake · Catch2</span>
         </summary>
-    
+
         <div class="project-details">
             <p>
-                Built a limit order book supporting...
+                I built a C++ limit order book to get more comfortable with both market structure and lower-level
+                programming. The project handles buy and sell orders, cancellations, price-time priority, and matching
+                across the book, while using C++ data structures designed around fast lookup and ordered price levels. I
+                started it partly because I wanted to understand what actually happens underneath a market order or
+                limit order, and to push myself further with C++ beyond coursework.
             </p>
-    
+            <p>
+                For now, I’m taking a short break from development to learn more about multithreading and concurrency,
+                as I’d like the next stage of the simulator to handle activity in parallel and feel more realistic. Once
+                I have a better grasp of those concepts, I’m hoping to come back to the project and continue building on
+                it. </p>
             <a href="https://github.com/liaerisson/MarketSimulator" target="_blank">
                 View on GitHub
             </a>
@@ -33,12 +42,16 @@
             <h2>File Ingestor</h2>
             <span>Java · JUnit · Spring Boot · REST APIs</span>
         </summary>
-    
+
         <div class="project-details">
             <p>
-                Built a limit order book supporting...
+                I built a Java document search engine that can ingest .txt files from a local directory or accept
+                documents through JSON, build an in-memory inverted index, and rank results for single- and multi-word
+                searches. I started the project because I wanted to understand what actually happens underneath a
+                keyword search, while getting more practice with software design, Java collections, file processing,
+                unit testing, and REST APIs.
             </p>
-    
+
             <a href="https://github.com/liaerisson/FileIngestor" target="_blank">
                 View on GitHub
             </a>
@@ -50,12 +63,20 @@
             <h2>Paper Analyzer</h2>
             <span>Bedrock AgentCore Runtime · AWS Tools (Knowledge Bases, S3) · Strands Agent · Python</span>
         </summary>
-    
+
         <div class="project-details">
             <p>
-                Built a limit order book supporting...
+                I built a Strands-based research agent that can analyze and compare multiple academic papers. Given a
+                set of sources, it summarizes each paper, builds a glossary of important terms, compares differences in
+                scope and subject matter, and separates quantitative findings from broader conclusions. I also designed
+                it to distinguish reported facts from author speculation and flag questions that might be worth
+                exploring further.
             </p>
-    
+            <p>
+                I originally built the agent around my interest in how AI may affect economic decision-making, so its
+                current knowledge base is geared toward that subject, but the underlying system can be adapted to other
+                research areas.
+            </p>
             <a href="https://github.com/liaerisson/Paper-Reviewer-Public" target="_blank">
                 View on GitHub
             </a>
