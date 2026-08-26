@@ -235,7 +235,7 @@ a:hover {
     width: 85px;
     height: 85px;
 
-    border-radius: 15x;
+    border-radius: 15px;
 }
 
 #navbar_logo img {
@@ -254,18 +254,71 @@ a:hover {
 /* =========================
    ABOUT
    ========================= */
-
 .intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    padding-left: 70px;
+    padding-right: 70px;
+
     margin-top: 55px;
     margin-bottom: 38px;
+}
 
-    max-width: 760px;
+.intro_description {
+    flex: 1;
 
     font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+}
 
-    font-size: clamp(2rem, 5vw, 3.3rem);
-    line-height: 1.18;
-    letter-spacing: -0.02em;
+.intro_image_frame {
+    flex: 0 1 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    box-shadow: 0 6px 18px rgba(48, 43, 41, 0.06);
+}
+
+#intro_image {
+    display: block;
+
+    width: auto;
+    height: auto;
+    max-height: 340px;
+
+    object-fit: contain;
+    border-radius: 17px;
+}
+
+.intro_description {
+    flex: 1;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+}
+
+#intro_image {
+    width: 100%;
+    height: auto;
+
+    max-height: 360px;
+
+    object-fit: contain;
+    border-radius: 20px;
 }
 
 .about_description {
@@ -540,6 +593,43 @@ a:hover {
     color: var(--muted);
 }
 
+.experience_with_image {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.experience_text {
+    flex: 1.7;
+    min-width: 0;
+}
+
+.experience_image_frame {
+    flex: 1;
+    min-width: 180px;
+    max-width: 260px;
+
+    padding: 7px;
+
+    background-color: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.experience_image_frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 13px;
+}
+
+.experience_images {
+    display: flex;
+    gap: 10px;
+}
+
 /* =========================
    EXTRACURRICULARS
    ========================= */
@@ -751,9 +841,26 @@ a:hover {
     }
 
     .intro {
-        margin-top: 55px;
+        flex-direction: column;
+        align-items: stretch;
 
-        font-size: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+
+        gap: 24px;
+    }
+
+    .intro_image_frame {
+        flex: none;
+
+        width: min(280px, 85%);
+        margin: 0 auto;
+    }
+
+    #intro_image {
+        width: 100%;
+        height: auto;
+        max-height: none;
     }
 
     .projects_summary,
@@ -787,6 +894,18 @@ a:hover {
     .experience_description,
     .extracurricular_description {
         padding: 18px;
+    }
+
+    .experience_with_image {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .experience_image_frame {
+        width: min(280px, 100%);
+        max-width: none;
+        min-width: 0;
+        margin: 0 auto;
     }
 
     .contact {
