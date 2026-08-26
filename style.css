@@ -113,7 +113,7 @@ ol {
     list-style: none;
 }
 
-.project-details {
+.project_details {
     padding-top: 20px;
 }
 
@@ -122,11 +122,46 @@ ol {
 }
 
 #navbar_mobile_container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
+
+    z-index: 100;
 }
 
 #navbar_mobile_container.open {
     max-height: 500px;
+}
+
+.navbar_mobile_button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.dropdown_button {
+    width: 63px;
+    height: 63px;
+    object-fit: contain;
+    display: block;
+}
+
+.navbar_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar_mobile_button {
+    margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
