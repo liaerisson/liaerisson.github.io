@@ -501,6 +501,29 @@ a:hover {
     color: var(--muted);
 }
 
+.experience_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+.experience_skills span {
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    background-color: var(--accent-soft);
+    color: var(--accent);
+
+    border-radius: 999px;
+
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
 
 /* =========================
    EXTRACURRICULARS
