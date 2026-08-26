@@ -120,3 +120,13 @@ ol {
 .project summary::-webkit-details-marker {
     display: none;
 }
+
+#navbar_mobile_container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#navbar_mobile_container.open {
+    max-height: 500px;
+}
