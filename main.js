@@ -4,3 +4,49 @@ const menu = document.getElementById("navbar_mobile_container");
 button.addEventListener("click", () => {
     menu.classList.toggle("open");
 });
+
+document.querySelectorAll(".navbar_mobile_link").forEach(link => {
+    link.addEventListener("click", event => {
+        if (link.target === "_blank") return;
+
+        const currentPage =
+            window.location.pathname.split("/").pop() || "index.html";
+
+        const targetPage =
+            link.getAttribute("href").split("/").pop();
+
+        if (currentPage === targetPage) {
+            event.preventDefault();
+            showPageToast("You're already here :)");
+        }
+    });
+});
+
+function showPageToast(message) {
+    let toast = document.querySelector(".page-toast");
+
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.className = "page-toast";
+        document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toast.hideTimeout);
+
+    toast.hideTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1000);
+}
+
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+
+    if (window.scrollY > 30) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});

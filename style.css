@@ -20,6 +20,11 @@
     --radius-large: 22px;
 }
 
+::selection {
+    background-color: var(--accent-soft);
+    color: var(--text);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -45,7 +50,7 @@ body {
 }
 
 /* Keep normal page content from becoming too wide */
-body> :not(.navbar) {
+body> :not(.navbar):not(.page-toast) {
     width: min(900px, calc(100% - 48px));
     margin-left: auto;
     margin-right: auto;
@@ -87,6 +92,9 @@ body {
     background: rgba(247, 244, 239, 0.94);
 
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(221, 212, 206, 0.55);
 }
 
 .navbar_container {
@@ -99,6 +107,11 @@ body {
     height: 100px;
 
     margin: 0 auto;
+    transition: height 0.25s ease;
+}
+
+.navbar.scrolled .navbar_container {
+    height: 70px;
 }
 
 .navbar_mobile_button {
@@ -116,6 +129,19 @@ body {
     transition:
         background-color 0.2s ease,
         transform 0.2s ease;
+}
+
+#navbar_logo,
+#navbar_logo img {
+    transition:
+        width 0.25s ease,
+        height 0.25s ease;
+}
+
+.navbar.scrolled #navbar_logo,
+.navbar.scrolled #navbar_logo img {
+    width: 58px;
+    height: 58px;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -275,6 +301,7 @@ body {
     height: 85px;
 
     border-radius: 15px;
+    transition: transform 0.2s ease;
 }
 
 #navbar_logo img {
@@ -289,6 +316,9 @@ body {
     background-color: var(--accent-soft);
 }
 
+#navbar_logo:hover img {
+    transform: scale(1.03) rotate(-2deg);
+}
 
 /* =========================
    ABOUT
@@ -456,10 +486,6 @@ body {
     box-shadow: 0 7px 20px rgba(48, 43, 41, 0.045);
 }
 
-.project {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
 .project_desc {
     font-style: italic;
     font-size: 0.95rem;
@@ -501,10 +527,18 @@ body {
 
     font-size: 1.8rem;
     font-weight: 300;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
 }
 
 .project[open] summary::after {
     content: "–";
+}
+
+.project summary:hover::after {
+    transform: translateY(-50%) scale(1.08);
 }
 
 .project summary h2 {
@@ -1012,12 +1046,55 @@ body {
 }
 
 /* =========================
+   TOAST
+   ========================= */
+
+.page-toast {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+
+    transform: translate(-50%, -8px);
+
+    padding: 8px 14px;
+
+    background-color: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    box-shadow: 0 6px 18px rgba(48, 43, 41, 0.08);
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+
+    z-index: 2000;
+
+    width: fit-content;
+    max-width: calc(100vw - 32px);
+    white-space: nowrap;
+}
+
+.page-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* =========================
    RESPONSIVE
    ========================= */
 
 @media (max-width: 650px) {
 
-    body> :not(.navbar) {
+    body> :not(.navbar):not(.page-toast) {
         width: min(100% - 32px, 900px);
     }
 
