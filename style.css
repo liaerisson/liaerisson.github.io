@@ -778,6 +778,17 @@ a:hover {
         border-color 0.2s ease;
 }
 
+.extracurricular > .extracurricular_gallery,
+.extracurricular > .extracurricular_image,
+.extracurricular > .oss_articles {
+    margin-bottom: 20px;
+}
+
+.extracurricular > .oss_articles {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
 .extracurricular:hover {
     transform: translateY(-1px);
     border-color: #c9b9b5;
