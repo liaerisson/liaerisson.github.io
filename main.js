@@ -65,3 +65,41 @@ if (backToTop) {
         });
     });
 }
+
+let shellClicks = 0;
+
+const shell = document.getElementById("navbar_logo");
+
+if (shell) {
+    shell.addEventListener("click", event => {
+        const currentPage =
+            window.location.pathname.split("/").pop() || "index.html";
+
+        if (currentPage !== "index.html") {
+            return;
+        }
+
+        event.preventDefault();
+
+        shellClicks++;
+
+        if (shellClicks === 3) {
+            launchCrab();
+            shellClicks = 0;
+        }
+    });
+}
+
+function launchCrab() {
+    const crab = document.createElement("img");
+
+    crab.className = "easter_crab";
+    crab.src = "images/crab_icon.png";
+    crab.alt = "";
+
+    document.body.appendChild(crab);
+
+    setTimeout(() => {
+        crab.remove();
+    }, 3000);
+}
