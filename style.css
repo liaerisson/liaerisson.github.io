@@ -479,8 +479,7 @@ a:hover {
 
 .project_skills span,
 .experience_skills span,
-.extracurricular_skills span 
-.current_focus_skills span{
+.extracurricular_skills span .current_focus_skills span {
     display: inline-block;
 
     padding: 4px 9px;
@@ -1056,6 +1055,53 @@ a:hover {
 .contact_links .contact_primary:hover {
     background-color: var(--text);
     color: white;
+}
+
+/* =========================
+   BACK TO TOP
+   ========================= */
+
+#back_to_top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background-color: var(--surface);
+    color: var(--accent);
+
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 14px rgba(48, 43, 41, 0.08);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+#back_to_top.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#back_to_top:hover {
+    background-color: var(--accent-soft);
 }
 
 /* =========================
