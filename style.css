@@ -1112,6 +1112,8 @@ summary:focus-visible {
         opacity 0.2s ease,
         transform 0.2s ease,
         background-color 0.2s ease;
+    
+    z-index: 1500;
 }
 
 #back_to_top.show {
