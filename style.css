@@ -47,6 +47,7 @@ body {
 
     font-size: 16px;
     line-height: 1.65;
+    animation: pageFadeIn 0.3s ease;
 }
 
 /* Keep normal page content from becoming too wide */
@@ -63,10 +64,6 @@ a {
 
 a:hover {
     color: var(--text);
-}
-
-body {
-    animation: pageFadeIn 0.3s ease;
 }
 
 @keyframes pageFadeIn {
@@ -328,9 +325,6 @@ body {
     align-items: center;
     gap: 40px;
 
-    padding-left: 70px;
-    padding-right: 70px;
-
     margin-top: 55px;
     margin-bottom: 38px;
 }
@@ -372,12 +366,10 @@ body {
 }
 
 .about_description {
-    max-width: 760px;
-
-    padding-bottom: 40px;
+    max-width: none;
+    padding-bottom: 0;
 
     color: var(--muted);
-
     font-size: 1.04rem;
 }
 
@@ -392,6 +384,51 @@ body {
     background:
         linear-gradient(transparent 62%,
             var(--accent-soft) 62%);
+}
+
+.current_focus {
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.current_focus h2 {
+    margin-bottom: 18px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.current_focus_row {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+
+    padding: 14px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.current_focus_label {
+    flex: 0 0 120px;
+
+    color: var(--accent);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.current_focus_row p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.current_focus_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
 }
 
 .projects_title,
@@ -442,7 +479,8 @@ body {
 
 .project_skills span,
 .experience_skills span,
-.extracurricular_skills span {
+.extracurricular_skills span 
+.current_focus_skills span{
     display: inline-block;
 
     padding: 4px 9px;
@@ -948,13 +986,12 @@ body {
    ========================= */
 
 .contact {
-    margin-top: 10px;
-    margin-bottom: 70px;
+    margin-top: 0;
+    margin-bottom: 45px;
 
     padding: 32px 34px;
 
     background-color: var(--accent-soft);
-
     border-radius: var(--radius-large);
 }
 
