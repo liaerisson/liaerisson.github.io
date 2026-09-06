@@ -479,7 +479,8 @@ a:hover {
 
 .project_skills span,
 .experience_skills span,
-.extracurricular_skills span .current_focus_skills span {
+.extracurricular_skills span,
+.current_focus_skills span {
     display: inline-block;
 
     padding: 4px 9px;
