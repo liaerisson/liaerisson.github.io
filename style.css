@@ -45,7 +45,7 @@ body {
 }
 
 /* Keep normal page content from becoming too wide */
-body > :not(.navbar) {
+body> :not(.navbar) {
     width: min(900px, calc(100% - 48px));
     margin-left: auto;
     margin-right: auto;
@@ -58,6 +58,20 @@ a {
 
 a:hover {
     color: var(--text);
+}
+
+body {
+    animation: pageFadeIn 0.3s ease;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -97,10 +111,24 @@ a:hover {
     cursor: pointer;
 
     border-radius: 12px;
+    position: relative;
 
     transition:
         background-color 0.2s ease,
         transform 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .navbar_mobile_button::after {
+        content: "";
+
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        width: min(285px, calc(100vw - 32px));
+        height: 25px;
+    }
 }
 
 .navbar_mobile_button:hover {
@@ -149,6 +177,17 @@ a:hover {
     transform: translateY(0);
 
     pointer-events: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .navbar_container:has(.navbar_mobile_button:hover) #navbar_mobile_container,
+    #navbar_mobile_container:hover {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 }
 
 .navbar_mobile_all_links {
@@ -412,7 +451,7 @@ a:hover {
 .project:hover {
     border-color: #c9b9b5;
 
-    transform: translateY(-1px);
+    transform: translateY(-3px);
 
     box-shadow: 0 7px 20px rgba(48, 43, 41, 0.045);
 }
@@ -421,8 +460,13 @@ a:hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project:hover {
-    transform: translateY(-3px);
+.project_desc {
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.75;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
 }
 
 .project summary {
@@ -625,7 +669,7 @@ a:hover {
     margin-top: 0;
 }
 
-.experience > .experience_image_frame.landscape {
+.experience>.experience_image_frame.landscape {
     width: min(80%, 600px);
     max-width: 600px;
 
@@ -736,13 +780,13 @@ a:hover {
     gap: 10px;
 
     width: min(82%, 680px);
-    
+
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.extracurricular_gallery > .extracurricular_image {
+.extracurricular_gallery>.extracurricular_image {
     margin-top: 0;
 }
 
@@ -973,7 +1017,7 @@ a:hover {
 
 @media (max-width: 650px) {
 
-    body > :not(.navbar) {
+    body> :not(.navbar) {
         width: min(100% - 32px, 900px);
     }
 
@@ -1012,7 +1056,7 @@ a:hover {
     .projects_title,
     .experiences_title,
     .extracurriculars_title,
-    body > h3 {
+    body>h3 {
         margin-top: 40px;
     }
 
@@ -1030,7 +1074,7 @@ a:hover {
         padding-left: 25px;
     }
 
-    .experience > .experience_image_frame.landscape {
+    .experience>.experience_image_frame.landscape {
         width: 100%;
         max-width: none;
 
@@ -1062,7 +1106,7 @@ a:hover {
     .contact_links {
         gap: 9px;
     }
-    
+
     .mje_image {
         width: 100%;
     }
