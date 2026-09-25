@@ -367,9 +367,9 @@ summary:focus-visible {
 
     width: 100%;
     height: auto;
-    max-height: 360px;
+    max-height: 400px;
 
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 20px;
 }
 
