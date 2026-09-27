@@ -3,17 +3,17 @@
    ========================= */
 
 :root {
-    --background: #f7f4ef;
-    --surface: #fffdf9;
-    --surface-soft: #f1e8e3;
+    --background: #fbf8f4;
+    --surface: #fffefa;
+    --surface-soft: #f5ece5;
 
-    --text: #302b29;
-    --muted: #756d69;
+    --text: #382f2a;
+    --muted: #786d67;
 
-    --accent: #9b6f78;
-    --accent-soft: #eadcdf;
+    --accent: #a66f67;
+    --accent-soft: #efe0da;
 
-    --border: #ddd4ce;
+    --border: #e1d7cf;
 
     --radius-small: 10px;
     --radius-medium: 16px;
@@ -86,12 +86,12 @@ a:hover {
     position: sticky;
     top: 0;
 
-    background: rgba(247, 244, 239, 0.94);
+    background: rgba(250, 247, 242, 0.94);
 
     z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(221, 212, 206, 0.55);
+    border-bottom: 1px solid rgba(225, 215, 207, 0.55);
 }
 
 .navbar_container {
