@@ -51,7 +51,7 @@ body {
 }
 
 /* Keep normal page content from becoming too wide */
-body > :not(.navbar):not(.page-toast):not(.easter_crab) {
+body> :not(.navbar):not(.page-toast):not(.easter_crab) {
     width: min(900px, calc(100% - 48px));
     margin-left: auto;
     margin-right: auto;
@@ -1275,7 +1275,7 @@ summary:focus-visible {
    EASTER EGG
    ========================= */
 
-   .easter_crab {
+.easter_crab {
     position: fixed;
     left: -80px;
     bottom: 18px;
@@ -1319,7 +1319,7 @@ summary:focus-visible {
 
 @media (max-width: 650px) {
 
-    body > :not(.navbar):not(.page-toast):not(.easter_crab) {
+    body> :not(.navbar):not(.page-toast):not(.easter_crab) {
         width: min(100% - 32px, 900px);
     }
 
