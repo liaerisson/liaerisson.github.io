@@ -1466,3 +1466,30 @@ body > .experience {
         height: 560px;
     }
 }
+
+@media (max-width: 650px) {
+    .mcwics_gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mcwics_gallery .extracurricular_image {
+        width: 100%;
+        min-width: 0;
+        aspect-ratio: auto;
+    }
+
+    .mcwics_gallery .mcwics_portrait {
+        width: min(260px, 80%);
+    }
+
+    .mcwics_gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mje_image {
+        width: calc(100% - 36px);
+    }
+}
