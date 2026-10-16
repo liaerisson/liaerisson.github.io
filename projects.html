@@ -55,32 +55,37 @@
     <details class="project">
         <summary>
             <h2>Market Simulator</h2>
-            <p class="project_desc">A C++ limit order book with price-time priority, FIFO order matching, and Catch2
-                Testing</p>
+            <p class="project_desc">
+                A C++ limit order book and matching engine with price-time
+                priority, trade recording, and performance benchmarks.
+            </p>
+
             <div class="project_skills">
                 <span>C++</span>
                 <span>CMake</span>
-                <span>Catch2</span>
-                <span>Data Structures</span>
-                <span>Order Matching</span>
+                <span>79 Catch2 Tests</span>
+                <span>1.82M Orders/sec · Single Thread</span>
                 <span>Price-Time Priority</span>
             </div>
         </summary>
 
         <div class="project_details">
-            <p>
-                I built a C++ limit order book to get more comfortable with both market structure and lower-level
-                programming. The project handles buy and sell orders, cancellations, price-time priority, and matching
-                across the book, while using C++ data structures designed around fast lookup and ordered price levels. I
-                started it partly because I wanted to understand what actually happens underneath a market order or
-                limit order, and to push myself further with C++ beyond coursework.
-            </p>
-            <p>
-                For now, I’m taking a short break from development to learn more about multithreading and concurrency,
-                as I’d like the next stage of the simulator to handle activity in parallel and feel more realistic. Once
-                I have a better grasp of those concepts, I’m hoping to come back to the project and continue building on
-                it.
-            </p>
+            <p> I started this project because I wanted to understand what happens
+                behind a trade and push my C++ beyond coursework. I built a limit
+                order book with price-time priority matching, partial fills,
+                cancellations, and trade history, along with displays for inspecting
+                individual orders and viewing market depth. </p>
+
+            <p> The project now has 79 passing Catch2 tests and averaged 1.82 million
+                orders per second in single-threaded Release benchmarks. I built
+                reproducible workloads so I could measure how future changes
+                affect performance. </p>
+
+            <p> Next, I want to explore whether concurrency can improve the engine
+                and understand the tradeoffs involved. I’m learning about
+                multithreading and synchronization before implementing and
+                comparing different approaches. </p>
+
             <a href="https://github.com/liaerisson/MarketSimulator" target="_blank" class="project_link">
                 View on GitHub ↗
             </a>
@@ -133,16 +138,19 @@
 
         <div class="project_details">
             <p>
-                I built a Strands-based research agent that can analyze and compare multiple academic papers. Given a
-                set of sources, it summarizes each paper, builds a glossary of important terms, compares differences in
-                scope and subject matter, and separates quantitative findings from broader conclusions. I also designed
-                its analysis structure to distinguish between reported findings and author interpretation, while
-                flagging questions or topics that may be worth exploring further.
+                I started this project in my free time during the final week of my
+                internship, wanting to gain more experience with AI tools by building
+                something useful to me. With my interest in how AI could affect economic
+                decision-making, I chose to build a research agent for analyzing and
+                comparing papers on the subject.
             </p>
+
             <p>
-                I originally built the agent around my interest in how AI could affect economic decision-making, so its
-                current knowledge base is geared toward that subject. However, the system can be adapted to
-                other research areas by changing the knowledge base and guidance provided to the agent.
+                The agent produces summaries, glossaries, and comparisons of methods
+                and findings, with an analysis structure that distinguishes reported
+                results from author interpretation. I continued developing it after
+                the internship, adding browser file uploads, chunking to address
+                latency, and improvements to the interface.
             </p>
             <a href="https://github.com/liaerisson/Paper-Reviewer-Public" target="_blank" class="project_link">
                 View on GitHub ↗

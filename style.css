@@ -13,6 +13,9 @@
     --accent: #a66f67;
     --accent-soft: #efe0da;
 
+    --page-width: 1050px;
+    --page-gutter: 24px;
+
     --border: #e1d7cf;
 
     --radius-small: 10px;
@@ -51,8 +54,8 @@ body {
 }
 
 /* Keep normal page content from becoming too wide */
-body> :not(.navbar):not(.page-toast):not(.easter_crab) {
-    width: min(900px, calc(100% - 48px));
+body> :where(:not(.navbar):not(.page-toast):not(.easter_crab):not(#back_to_top):not(script)) {
+    width: min(var(--page-width), calc(100% - 2 * var(--page-gutter)));
     margin-left: auto;
     margin-right: auto;
 }
@@ -100,7 +103,7 @@ a:hover {
     display: flex;
     align-items: center;
 
-    width: min(1000px, calc(100% - 32px));
+    width: min(var(--page-width), calc(100% - 2 * var(--page-gutter)));
     height: 100px;
 
     margin: 0 auto;
@@ -454,11 +457,7 @@ summary:focus-visible {
 .projects_summary,
 .experiences_summary,
 .extracurriculars_summary {
-    width: min(900px, calc(100% - 48px));
-    max-width: none;
-
     margin: 0 auto 55px;
-    padding-right: 180px;
 
     color: var(--muted);
     font-size: 1rem;
@@ -605,8 +604,6 @@ summary:focus-visible {
 }
 
 .project_details p {
-    max-width: 760px;
-
     margin-top: 20px;
 }
 
@@ -641,13 +638,20 @@ summary:focus-visible {
 
 .experience {
     position: relative;
-
-    max-width: 800px;
-
     margin-left: 10px;
     padding: 0 0 38px 34px;
 
     border-left: 1px solid var(--border);
+}
+
+body > .experience {
+    width: min(
+        var(--page-width),
+        calc(100% - 2 * var(--page-gutter))
+    );
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .experience::before {
@@ -1058,7 +1062,6 @@ summary:focus-visible {
 }
 
 .resume_viewer {
-    width: min(680px, 100%);
     margin: 0 auto 40px;
 
     background-color: var(--surface);
@@ -1209,7 +1212,6 @@ summary:focus-visible {
    ========================= */
 
 .footer {
-    width: 100%;
     padding: 30px 0 20px;
     text-align: center;
     font-size: 0.8rem;
@@ -1319,12 +1321,8 @@ summary:focus-visible {
 
 @media (max-width: 650px) {
 
-    body> :not(.navbar):not(.page-toast):not(.easter_crab) {
-        width: min(100% - 32px, 900px);
-    }
-
-    .navbar_container {
-        width: calc(100% - 24px);
+    :root {
+        --page-gutter: 16px;
     }
 
     .intro {
@@ -1348,13 +1346,6 @@ summary:focus-visible {
         max-height: none;
     }
 
-    .projects_summary,
-    .experiences_summary,
-    .extracurriculars_summary {
-        width: calc(100% - 32px);
-        padding-right: 0;
-    }
-
     .projects_title,
     .experiences_title,
     .extracurriculars_title,
@@ -1371,8 +1362,6 @@ summary:focus-visible {
     }
 
     .experience {
-        margin-left: 5px;
-
         padding-left: 25px;
     }
 
@@ -1470,7 +1459,6 @@ summary:focus-visible {
     }
 
     .resume_viewer {
-        width: 100%;
         margin-bottom: 30px;
     }
 
