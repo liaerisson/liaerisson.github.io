@@ -1468,25 +1468,31 @@ body > .experience {
 }
 
 @media (max-width: 650px) {
-    .mcwics_gallery {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .extracurricular_gallery.mcwics_gallery {
+        display: block;
+        height: auto;
     }
 
-    .mcwics_gallery .extracurricular_image {
-        width: 100%;
-        min-width: 0;
-        aspect-ratio: auto;
-    }
-
-    .mcwics_gallery .mcwics_portrait {
-        width: min(260px, 80%);
-    }
-
-    .mcwics_gallery img {
+    .mcwics_gallery > .extracurricular_image {
         width: 100%;
         height: auto;
+        min-height: 0;
+        aspect-ratio: auto;
+        margin: 0 0 12px;
+    }
+
+    .mcwics_gallery > .mcwics_portrait {
+        width: min(260px, 80%);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mcwics_gallery > .extracurricular_image > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        aspect-ratio: auto;
     }
 
     .mje_image {
